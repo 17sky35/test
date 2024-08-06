@@ -12,7 +12,7 @@ public class Ex08_multi_arrays {
 		//3차원 배열은 배열의 요소로 2차원 배열을 갖는다.
 		
 		//2차원 배열의 생성
-		//자료형 [][] 배열명 = new 자료형 [크기][크기];
+		//자료형 [][] 배열명 = new 자료형 [1차원배열의 갯수][각 1차원의 배열이가지는 데이터의 갯수];
 		int [][] arr = new int[3][2];
 		
 		arr[0][0] = 100;
@@ -39,15 +39,21 @@ public class Ex08_multi_arrays {
 		//이차원배열 iArr에서 총합구하기
 		int [][] iArr = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20}};
 		int sum = 0;
-		for(int i = 0; i <4;i++) {			
-			for(int j = 0; j<5;j++) {
-				sum += j;
+		for(int i = 0; i < iArr.length ;i++) {			
+			for(int j = 0; j < iArr[i].length ;j++) {
+				sum += iArr[i][j];
 			}
+		}		
+		System.out.println("총 합 : " + sum);
+		
+		
+		int [] a = new int[5];
+	
+		for(int i = 0; i <5;i++) {			
+			a [i]= iArr[3][i];
 		}
-		System.out.println(sum);
 		
-		
-		
+		System.out.println(Arrays.toString(a));
 		
 	}
 }
