@@ -8,6 +8,8 @@ public class CalMain {
 		
 		System.out.println("CalPlus : " + p.getResult(20, 10));
 		System.out.println("CalMinus : " + m.getResult(30, 15));
+		
+		
+		
 	}
 }
-
