@@ -13,7 +13,6 @@ public class PersonMain {
 				jimin.chargePhon();
 			}
 		}
-		
 		jimin.buyNewPhone(new ThreeStarPhone());
 		
 		jimin.turnOnPhone();
