@@ -29,6 +29,52 @@ Integer.parseInt("정수형태의 문자열");	ㅣ
 
 
 
+
+
+Object 	자바 클래스의 최상위 클래스
+System 	시스템의 표준 입력/출력 장치로부터 데이터를 입력받거나 출력하기 위해 사용
+String 	문자열을 저장하고 여러 가지 정보를 얻을 때 사용
+StringBuffer/StrngBuilder 	문자열을 저장하고 내부 문자열을 조작할 때 사용
+Math 	수학관련 함수를 이용할 때 사용
+
+str1.equals(str2)			문자열 값 비교
+System.identityHashCode(문자열) 	문자열 위치(주소) 출력
+
+str.length() str 의 길이
+str.indexOf('a') str 문자열에서 a의 인덱스 위치 맨앞쪽 1개 위치만 출력
+str.indexOf("Kin") 문자열 검색도 가능
+str.lastIndexOf('n') str 문자열에서 n의 인덱스 위치 맨뒤쪽 1개 위치만 출력
+str.charAt(4) str 문자열에서 인덱스4번 호출
+str.substring(0,6) str 문자열에서 인덱스 0번부터 5번까지 출력
+Arrays.toString(str.split(" ")) syt문자열에서 " " 기준으로 잘라내서 배열에 저장
+
+
+str.append(String str) 		기존 문자열 뒤에 더하여 반환
+str.delete(int start, int end) 		시작 위치부터 끝 위치 전까지 삭제
+str.insert(int offset, String str) 	시작 위치부터 문자열을 삽입
+str.reverse()			문자열을 반대로 출력
+str.replace("Mal","Gae")		Mal을 Gae로 바꾼다
+str.contains(String str)		특정문자를 포함하고 있는지 판별
+
+
+날짜 시간 클래스 calendar
+Calendar cal = Calendar.getInstance();
+Calendar클래스의 속성
+YEAR,MONTH,DATE 	연,월(0-11),일(1-31)을 나타내는 상수
+DAY_OF_MONTH 		현재 달을 몇 번쨰 날인지는 나타내는 상수
+DAY_OF_WEEK 		현재 주의 몇번째 요일인지 나타내는 상수(1-7),1이 일요일
+HOUR,MINUTE 		시, 분을 나타내는 상수
+SECOND, MILLISECOND 	초, 밀리초를 나타내는 상수
+HOUR_OF_DAY 		현재 날의 시각을 의미하는 상수
+AM_PM HOUR		가 정오보다 이전이면 0을, 이후이면 의 값을 가지는 상수
+WEEK_OF_MONTH		현재 달의 몇 번쨰 주인지를 나타내는 상수
+WEEK_OF_YEAR 		현재 해의 몇 번쨰 주인지를 나타내는 상수
+
+int year = cal.get(Calendar.YEAR);
+int month = cal.get(Calendar.MONTH)+1;
+int day = cal.get(Calendar.DAY_OF_MONTH);
+
+
 int n = 100;
 int - 자료형
 n - 변수명
