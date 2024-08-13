@@ -37,6 +37,9 @@ String 	문자열을 저장하고 여러 가지 정보를 얻을 때 사용
 StringBuffer/StrngBuilder 	문자열을 저장하고 내부 문자열을 조작할 때 사용
 Math 	수학관련 함수를 이용할 때 사용
 
+
+hashCode();	주소값을 볼 수 있는 메서드
+toString()		객체 자신의 정보를 볼 수 있는 메서드
 str1.equals(str2)			문자열 값 비교
 System.identityHashCode(문자열) 	문자열 위치(주소) 출력
 
@@ -55,6 +58,7 @@ str.insert(int offset, String str) 	시작 위치부터 문자열을 삽입
 str.reverse()			문자열을 반대로 출력
 str.replace("Mal","Gae")		Mal을 Gae로 바꾼다
 str.contains(String str)		특정문자를 포함하고 있는지 판별
+str.isEmpty()			길이가 0인경우 true
 
 
 날짜 시간 클래스 calendar
@@ -74,6 +78,46 @@ int year = cal.get(Calendar.YEAR);
 int month = cal.get(Calendar.MONTH)+1;
 int day = cal.get(Calendar.DAY_OF_MONTH);
 
+
+타입 파라미터 기호 네이밍
+<T>	타입(TYPE)
+<E>	요소(Element)
+<K> 	키(Key)
+<V>	값(Value)
+<N> 	숫자<Number>
+
+---------------------------------------------------------------------------------
+
+List에서 제공하는 주요 메서드
+
+void add(E e)		삽입	데이터를 순차적으로 삽입
+void add(int index, E e)	중간삽입	원하는 index 위치에 삽입
+void set(int index,E e)	치환	원하는 index 위치에 값 변경
+E get(int index)		반환	선택된 index 위치의 값 반환
+void remove(int index)	삭제 	선택된 index 위치의 값 삭제
+void clear()		전체삭제 모든 데이터 삭제
+int size()			크기 	저장된 데이터의 개수 반환
+boolean contains(Object o)	검색 	데이터 존재 여부 확인
+
+
+Set인터페이스에서 제공하는 메서드
+void add(E e)		데이터를 순차적으로 삽입
+void remove(Object o)	선택된 값 삭제
+void clear()		모든 데이터 삭제
+int size()			저장된 데이터의 개수 반환
+boolean contains(Object o)	데이터 존재 여부 확인
+
+
+
+
+Iterator 메서드
+
+boolean hasNext()		다음에 순회할 데이터 유무확인
+			가져올 객체가 있으면 true
+E nest()			다음 위치의 데이터로 이동하여 반환
+
+
+---------------------------------------------------------------------------------
 
 int n = 100;
 int - 자료형
