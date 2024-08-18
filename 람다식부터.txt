@@ -17,19 +17,62 @@ str -> {System.out.println(str);}
 중괄호 생략하기
 - 함수의 반환형이 void라면 중괄호도 생략할 수 있다.
 str -> System.out.println(str);
+System.out::println
 
 - 반환형이 있을 때 return키워드와 중괄호를 같이 생략할 수 있다.
 (x, y)->x+y;
 
+-------------------------------------------------------------------------
+java.util.function 패키지의 주요 인터페이스			ㅣ
+인터페이스명 	추상메서드				ㅣ
+java.lang.Runnable	void run()	매개변수없고 반환값도 없음	ㅣ	
+Supplier 		T get()		매개변수없고 반환값만 있음	ㅣ
+Consumer	void accpt(T t)	매개변수 한개, 반환값없음	ㅣ
+Function<T,R>	R apply(T t)	매개변수 한개, 반환값있음	ㅣ
+Predicate		boolean test(T t)	조건을 표현하는데 사용됨	ㅣ
+Consumer<String> print = t -> System.out.print(t + " ");		ㅣ
+Consumer 인터페이스에서 기본으로 제공 인터페이스 생성안해두됨.	ㅣ
+							l
+매개변수가 두 개인 함수형 인터페이스				l
+BiConsumer<T,U>  void accpt<T t,U u>			l
+BiPredicate<T,U>	boolean test(T t, U u>			l
+BiFunction<T,U,R>	R apply<T t, U u>				l
+							l
+람다식의 합성과 결합					l
+두 람다식을 합성해서 새로운 람다식을 만들 수 있다.		l
+f.andThen(g) -> f를 먼저 적용하고 그다음에 g를 적용한다		l	
+f.compose(g) -> g를 먼저 적용하고 f를 적용한다.		l
+-------------------------------------------------------------------------
 
+스레드 동기화 처리
+하나의 스레드가 이 영역에 진입할때 락을 걸어 다른 스레드가 수행되지 못하도록 하고 작업이 종료되면 락을 풀어 다른 스레드가 작업하도록 하는 것.
+블록 또는 메서드 단위로 synchronized키워드를 붙여 사용한다.
 
+메서드 동기화 처리
+메서드 이름 앞에 synchronized키워드를 사용하면 해다 메서드 전체를 동기화 처리할 수 있다.
 
+public synchronized void add(){
 
+}
+블록 동기화 처리   ->   synchronized(객체명);
+메서드 동기화 처리 경우 메서드 처리 시간이 길어질 경우 성능에 영향을 미치는 단점이 있다.
+이러한 이유로 전체 메서드가 아닌 특정 영역만 동기화 처리를 하는것을 블록 동기화 처리라고 한다.
 
+스레드의 상태
+스레드는 생성하고, 실행, 종료되기까지 다양한 상태를 가진다.
+각 스레드의 상태는 스레드 클래스에 정의되어 있으며, Thread.State 타입으로 알 수 있다.
+스레드는 상태에 따라 6가지 타입으로 분류한다.
+생성	NEW		스레드 객체가 생성되었지만 start()로 호출되지 않은 상태
+대기	RUNNABLE	실행 대기 또는 실행 상태로 언제든지 갈 수 있는 상태
+일시정지	WATING		다른 스레드가 종료될 때까지 대기하는 상태
+	TIME_WATING	주어진 시간동안 대기하는 상태
+	BLOCKED		락이 풀릴때까지 대기하는 상태
+종료	TERMINATED	수행을 종료한 상태
 
-
-
-
+Thread.sleep(1000);//1초동안 멈춤
+sleep(int mils)
+주어진 시간동안 스레드를 정지시키는 메서드
+해당 기능은 모든 스레드를 대기시키며, 주어진 시간이 지나면 풀리게 된다.
 
 
 

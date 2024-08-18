@@ -114,7 +114,7 @@ List
 - 중복된 데이터 허용
 
 Map
-Map<Integer, Character> map = new HashMap<Integer, Character>();
+Map<Integer, Character> map = new HashMap<Integer, Character>();  -> Integer -> key
 put(Integer, Character)	추가
 remove(Integer)		삭제	반환가능
 size(Integer)		크기
@@ -392,7 +392,35 @@ NullPointerException
 <? super 하위타입> : Lower Bounded WildCards(하위 클래스 제한)
 - 타입 파라미터를 대치하는 구체적인 타입으로 하위 타입이나, 하위 타입의 상위 타입만 올 수 있다.
 
+1. 제네릭 타입 객체 생성 불가능
+2. static 필드, 메서드에 제네릭타입 사용불가능
+3. 제네릭 타입 자체로 배열 생성 불가능
 
+
+제네릭 타입 자체를 파라미터로 받을수 있다.
+ArrayList<LinkedList<String>> list = new ArrayList<>();
+ArrayList의 요소로 LinkedList객체를 가짐
+
+제네릭 인터페이스
+인터페이스에도 제네릭을 붙힐 수 있음
+구현한 클래스에서도 제네릭 타입에 맞춰 구현해야한다.
+
+제네릭 메서드
+클래스랑 별개로 제네릭 타입매개변수를 갖는 메서드
+public <T> T addBox(T x, T y){
+}
+
+와일드카드
+- 제네릭타입에 들어갈 수 있는 범위를 한정
+
+<?> : Unbounded WildCards(제한없음)
+- 타입 파라미터를 대치하는 구체적인 타입으로 모든 클래스나 인터페이스 타입이 올 수 있다.
+
+<? extends 상위타입> : Upper Bounded WildCards(상위 클래스 제한)
+- 타입 파라미터를 대치하는 구체적인 타입으로 상위 타입이나, 상위 타입의 하위 타입만 올 수 있다.
+
+<? super 하위타입> : Lower Bounded WildCards(하위 클래스 제한)
+- 타입 파라미터를 대치하는 구체적인 타입으로 하위 타입이나, 하위 타입의 상위 타입만 올 수 있다.
 ---------------------------------------------------------------------------------------------------------------------
 
 
