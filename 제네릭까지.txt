@@ -27,7 +27,12 @@ String 를 int 로 변환할때		ㅣ
 Integer.parseInt("정수형태의 문자열");	ㅣ
 -------------------------------------------
 
-
+--------입력 받기----------------------------------------------------------------------------
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	ㅣ
+String str = br.readLine();   <-  str 문자열 입력받을때				ㅣ
+System.out.print("정수 입력 : ");						ㅣ
+int n = Integer.parseInt(br.readLine());						ㅣ
+----------------------------------------------------------------------------------------------
 
 
 
