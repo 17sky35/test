@@ -10,7 +10,7 @@
 --------------------------------------------------------------------------
 SELECT SYSDATE FROM DUAL; 현재 날짜를 호출
 
-
+DML  - INSERT, UPDATE, DELETE
 
 
 sqlplus -> 처음에 db에 접속하려고 할 때 사용하는 키워드
@@ -100,6 +100,11 @@ PRIMARY KEY
 
 FOREIGN KEY
 CONSTRAINT FAMILY_FK FOREIGN KEY(S_NUMBER) REFERENCES STAFF(S_NUMBER)
+
+
+-- 행 단위 데이터 삭제
+DELETE FROM PLAYER
+WHERE HEIGHT > (SELECT AVG(HEIGHT) FROM PLAYER);
 
 --테이블 삭제
 DROP TABLE "ORDER";
@@ -475,10 +480,23 @@ FROM EMPLOYEES
 WHERE DEPARTMENT_ID <=50
 GROUP BY DEPARTMENT_ID 
 HAVING AVG(SALARY) <10000;
+--------------------------------------------------------------------------------------
+VIEW 의 생성
+CREATE VIEW 뷰이름 AS(
+	쿼리문
+)
 
+VIEW 의 수정
+OR REPLACE : 기존의 정의를 변경하는데 사용할 수 있다.
+CREATE OR REPLACE VIEW AS(
+	쿼리문
+);
 
-
-
+VIEW 의 삭제
+RESTRICT : VIEW 를 다른곳에서 참조하고 있다면 삭제가 취소됨
+DROP VIEW 뷰이름 RESTRICT ;
+CASCADE : VIEW 를 참조하는 다른 뷰나 제약조건까지 모두 삭제.
+DROP VIEW 뷰이름 CASCADE ;
 
 
 
